@@ -17,7 +17,6 @@ class DownloadArchive:
 
     def page_download(self):
         self.selenium_driver.get(self.link)
-        with open(f'{os.getcwd().replace('\\', '//')}//..//parse_archive//{self.file_name}', "w",
-                  encoding=self.encoding) as file:
+        with open(self.file_name, "w", encoding=self.encoding) as file:
             file.write(self.selenium_driver.page_source)
         self.selenium_driver.quit()

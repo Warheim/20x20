@@ -1,2 +1,4 @@
 configparser
 selenium
+bs4
+lxml
