@@ -49,8 +49,9 @@ class AnalyzeNums:
     def summary_nums_count(popularity, stagnation, pairs):
         summary = pairs.copy()
         for key, value in summary.items():
-            summary[key] = value + 5 + (popularity[key[0]] + popularity[key[1]]) / 2 + (
-                    stagnation[key[0]] + stagnation[key[1]]) / 2
+            summary[key] = (value + (popularity[key[0]] + popularity[key[1]]) / 2 + (
+                    stagnation[key[0]] + stagnation[key[1]]) / 2) / 20
+        sv = sum(summary.values())
         return summary
 
     @staticmethod
@@ -69,7 +70,7 @@ class AnalyzeNums:
     def clean_nums(organizer):
         clean_nums = []
         for row in organizer:
-            for keys in row[0]:
-                if keys not in clean_nums:
-                    clean_nums.append(keys)
+            if row[0][0] not in clean_nums and row[0][1] not in clean_nums:
+                clean_nums.append(row[0][0])
+                clean_nums.append(row[0][1])
         return clean_nums[:4]

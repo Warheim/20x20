@@ -10,7 +10,7 @@ if __name__ == '__main__':
 
     download_scheme = DownloadArchive(
         cfg_site.link, cfg_site.file_name, cfg_site.encoding)
-    download_scheme.page_download()
+    # download_scheme.page_download()
 
     parse_scheme = ParseArchive(cfg_parser.tag, cfg_parser.main_class, cfg_parser.run_class, cfg_parser.dt_class,
                                 cfg_parser.nums_class, cfg_parser.encoding, cfg_parser.file_name)
