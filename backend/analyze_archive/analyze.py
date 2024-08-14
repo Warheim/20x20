@@ -51,7 +51,6 @@ class AnalyzeNums:
         for key, value in summary.items():
             summary[key] = (value + (popularity[key[0]] + popularity[key[1]]) / 2 + (
                     stagnation[key[0]] + stagnation[key[1]]) / 2) / 20
-        sv = sum(summary.values())
         return summary
 
     @staticmethod
