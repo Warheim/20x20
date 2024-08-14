@@ -59,10 +59,14 @@ class AnalyzeNums:
         for key, value in summary.items():
             organizer_draft[key[0]].update({key: value})
         organizer = {}
+        keys_for_del = []
         for key, value in organizer_draft.items():
             for nums, val in value.items():
-                if val == max(value.values()):
+                if val == max(value.values()) and nums[0] not in keys_for_del and nums[1] not in keys_for_del:
                     organizer[nums] = val
+                    keys_for_del.append(nums[0])
+                    keys_for_del.append(nums[1])
+
         return organizer
 
     @staticmethod
