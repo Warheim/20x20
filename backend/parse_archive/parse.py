@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 
 
-class ParseArchive:
+class ParseArchive:  # TODO They changed design! Re-parse!
     def __init__(self, tag, main_class, run_class, dt_class, nums_class, encoding, file_name):
         self.tag = tag
         self.main_class = main_class
