@@ -7,13 +7,14 @@ from backend.analyze_archive.analyze import AnalyzeNums
 if __name__ == '__main__':
     cfg_BigSportLoto = ConfigBigSportLoto()
 
-    download_scheme = DownloadArchive(
-        cfg_BigSportLoto.link, cfg_BigSportLoto.file_name, cfg_BigSportLoto.encoding)
-    download_scheme.page_download()
+    # download_scheme = DownloadArchive(
+    #     cfg_BigSportLoto.link, cfg_BigSportLoto.file_name, cfg_BigSportLoto.encoding)
+    # download_scheme.page_download()
     parse_scheme = ParseArchive()
     soup = parse_scheme.soup()
     data = parse_scheme.parse(soup)
     clean_data = parse_scheme.clean_data(data)
+    print(clean_data)
     #
     # analyze = AnalyzeNums.analyze_nums(clean_data)
     # print(analyze)

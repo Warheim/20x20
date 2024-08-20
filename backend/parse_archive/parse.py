@@ -13,17 +13,14 @@ class ParseArchive(ConfigBigSportLoto):
         return soup
 
     def parse(self, soup):
-        data = soup.find_all(self.tag, class_=self.main_class)
+        data = soup.find_all(self.main_tag, class_=self.main_class)
         return data
 
     def clean_data(self, data):
         clean_data = []
         for run in data:
-            run_number = int(run.find(self.tag,
-                                      class_=self.run_class).text.strip())  # TODO They changed design! Re-parse! You stopped here
-            print('g')
-    #         run_date, run_time = run.find(self.tag, class_=self.dt_class).text.split(' ')
-    #         nums = run.find(self.tag, class_=self.nums_class).text.strip().split('\n')
-    #         nums = [int(num) for num in nums[:len(nums) // 2] if num.isdigit()]
-    #         clean_data.append((run_number, run_date, run_time, nums[:4], nums[4:]))
-    #     return clean_data
+            run_number = int(run.find(self.run_tag, class_=self.run_class).text)
+            nums = run.find_all(self.nums_tag, class_=self.nums_class)
+            nums = [int(num.text) for num in nums]
+            clean_data.append((run_number, nums[:5], nums[5:]))
+        return clean_data

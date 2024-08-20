@@ -13,10 +13,11 @@ class ConfigBigSportLoto(Config):
         super().__init__()
         self.link = self.config_parse['SITE_BigSportLoto']['link']
         self.file_name = self.config_parse['SITE_BigSportLoto']['file_name']
-        self.tag = self.config_parse['PARSER_BigSportLoto']['main_tag']
+        self.main_tag = self.config_parse['PARSER_BigSportLoto']['main_tag']
         self.main_class = self.config_parse['PARSER_BigSportLoto']['main_class']
+        self.run_tag = self.config_parse['PARSER_BigSportLoto']['run_tag']
         self.run_class = self.config_parse['PARSER_BigSportLoto']['run_class']
-        self.dt_class = self.config_parse['PARSER_BigSportLoto']['dt_class']
+        self.nums_tag = self.config_parse['PARSER_BigSportLoto']['nums_tag']
         self.nums_class = self.config_parse['PARSER_BigSportLoto']['nums_class']
 
 
