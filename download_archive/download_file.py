@@ -10,7 +10,7 @@ class DownloadArchive:  # TODO The changed design! Re-load!
         self.file_name = file_name
 
         self.chrome_options = Options()
-        # self.chrome_options.add_argument("--headless")
+        self.chrome_options.add_argument("--headless")
         self.chrome_options.add_argument("--start-maximized")
 
         self.selenium_driver = Chrome(options=self.chrome_options)

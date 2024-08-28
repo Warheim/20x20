@@ -1,10 +1,10 @@
 import configparser
-
+import os
 
 class Config:
     def __init__(self):
         self.config_parse = configparser.ConfigParser()
-        self.config_parse.read('config.ini')
+        self.config_parse.read('config_management/config.ini')
         self.encoding = self.config_parse['SETTINGS']['encoding']
 
 

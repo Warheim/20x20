@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup
-from backend.engine_module.config_management import ConfigBigSportLoto
+from config_management.config_management import ConfigBigSportLoto
 
 
 class ParseArchive(ConfigBigSportLoto):
